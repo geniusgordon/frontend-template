@@ -15,16 +15,18 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$|\.jsx$/,
-      loaders: ['babel'],
+      loaders: ['babel', 'eslint'],
       exclude: /node_modules/,
       include: path.join(__dirname, 'src')
-    }],
-    preLoaders: [{
-      test: /\.js$|\.jsx$/,
-      loader: 'eslint-loader',
+    }, {
+      test: /\.css$/,
+      loaders: ['style', 'css?modules&camelCase', 'postcss'],
       exclude: /node_modules/,
       include: path.join(__dirname, 'src')
     }]
+  },
+  postcss: function() {
+    return [require('autoprefixer'), require('precss')];
   },
 }
 
