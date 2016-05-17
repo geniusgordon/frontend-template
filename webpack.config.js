@@ -18,6 +18,11 @@ module.exports = {
       loaders: ['babel'],
       exclude: /node_modules/,
       include: path.join(__dirname, 'src')
+    }, {
+      test: /\.css$/,
+      loaders: ['style', 'css?modules&camelCase'],
+      exclude: /node_modules/,
+      include: path.join(__dirname, 'src')
     }],
     preLoaders: [{
       test: /\.js$|\.jsx$/,

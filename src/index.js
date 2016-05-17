@@ -7,3 +7,13 @@ render(
   document.getElementById('root')
 );
 
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    const NewApp = require('./App'); // eslint-disable-line global-require
+    render(
+      <NewApp.default />,
+      document.getElementById('root')
+    );
+  });
+}
+
