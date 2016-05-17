@@ -1,5 +1,6 @@
 .app-title {
   font-size: 50px;
   color: red;
+  transition: color 0.5 ease;
 }
 
