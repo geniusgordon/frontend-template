@@ -1,17 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './App';
+import Root from './Root';
+import configureStore from './store';
+
+const store = configureStore();
 
 render(
-  <App />,
+  <Root store={store} />,
   document.getElementById('root')
 );
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    const NewApp = require('./App'); // eslint-disable-line global-require
+  module.hot.accept('./Root', () => {
+    const NextRoot = require('./Root').default; // eslint-disable-line global-require
     render(
-      <NewApp.default />,
+      <NextRoot store={store} />,
       document.getElementById('root')
     );
   });

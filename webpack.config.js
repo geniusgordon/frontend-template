@@ -16,12 +16,10 @@ module.exports = {
     loaders: [{
       test: /\.js$|\.jsx$/,
       loaders: ['babel', 'eslint'],
-      exclude: /node_modules/,
       include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
       loaders: ['style', 'css?modules&camelCase', 'postcss'],
-      exclude: /node_modules/,
       include: path.join(__dirname, 'src')
     }]
   },
