@@ -4,6 +4,7 @@ import Dispatcher from 'redux-devtools-dispatch';
 import LogMonitor from 'redux-devtools-log-monitor';
 import DockMonitor from 'redux-devtools-dock-monitor';
 import MultipleMonitors from 'redux-devtools-multiple-monitors';
+import * as actionCreators from './actions';
 
 const DevTools = createDevTools(
   <DockMonitor
@@ -13,7 +14,7 @@ const DevTools = createDevTools(
   >
     <MultipleMonitors>
       <LogMonitor />
-      <Dispatcher />
+      <Dispatcher actionCreators={actionCreators} />
     </MultipleMonitors>
   </DockMonitor>
 );
