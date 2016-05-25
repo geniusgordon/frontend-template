@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './App';
+import App from './containers/App';
 
 render(
   <App />,
@@ -8,8 +8,8 @@ render(
 );
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    const NewApp = require('./App'); // eslint-disable-line global-require
+  module.hot.accept('./containers/App', () => {
+    const NewApp = require('./containers/App'); // eslint-disable-line global-require
     render(
       <NewApp.default />,
       document.getElementById('root')

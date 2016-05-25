@@ -4,7 +4,7 @@
   "description": "frontend-template",
   "scripts": {
     "build": "webpack",
-    "test": "export NODE_ENV=test && mocha --require ignore-styles --compilers js:babel-core/register --recursive",
+    "test": "mocha --require ignore-styles --compilers js:babel-core/register ./src/**/*.test.js",
     "start": "webpack-dev-server --inline --hot"
   },
   "dependencies": {
