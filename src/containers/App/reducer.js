@@ -1,10 +1,15 @@
 import { fromJS } from 'immutable';
+import { handleActions } from 'redux-actions';
 
-const initialState = fromJS({});
+const initialState = fromJS({
+  message: 'Hello, World!',
+});
 
-/* eslint-disable no-unused-vars */
-export default function reducer(state = initialState, action) {
-/* eslint-enable no-unused-vars */
-  return state;
-}
+const reducer = handleActions({
+  MESSAGE: (state, action) => (
+    state.set('message', action.payload)
+  ),
+}, initialState);
+
+export default reducer;
 
