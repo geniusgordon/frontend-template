@@ -1,6 +1,7 @@
 var path = require('path');
+var webpack = require('webpack');
 
-module.exports = {
+const config = {
   entry: {
     'index': './src/index.js',
   },
@@ -28,3 +29,17 @@ module.exports = {
   },
 }
 
+if (process.env.NODE_ENV === 'production') {
+  config.plugins = [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+    }),
+  ];
+}
+
+module.exports = config;

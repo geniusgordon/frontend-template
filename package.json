@@ -4,8 +4,9 @@
   "description": "frontend-template",
   "scripts": {
     "build": "webpack",
+    "build:prod": "NODE_ENV=production webpack -p",
     "lint": "eslint ./src",
-    "test": "mocha ./src/**/*.test.js",
+    "test": "NODE_ENV=test mocha ./src/**/*.test.js",
     "start": "webpack-dev-server --inline --hot"
   },
   "dependencies": {
