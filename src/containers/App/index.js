@@ -19,7 +19,7 @@ App.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  message: state.app.get('message'),
+  message: `${state.app.get('message')}, ${state.app.get('count')}`,
 });
 
 export { App };
