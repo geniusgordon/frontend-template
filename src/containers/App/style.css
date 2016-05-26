@@ -4,3 +4,17 @@
   transition: color 0.5 ease;
 }
 
+a {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+
+  &.active {
+    background-color: black;
+    color: white;
+  }
+}
+

@@ -7,7 +7,14 @@ import { App } from '../index';
 describe('<App />', () => {
   it('should render App title and message', () => {
     const wrapper = shallow(<App message="123" />);
-    expect(wrapper.html()).to.equal('<div><div>App</div><div>123</div></div>');
+    expect(wrapper.childAt(0).text()).to.equal('App');
+    expect(wrapper.childAt(1).text()).to.equal('123');
+  });
+
+  it('should render it\'s children', () => {
+    const children = <div>Test</div>;
+    const wrapper = shallow(<App>{children}</App>);
+    expect(wrapper.contains(children)).to.be.true;
   });
 });
 
