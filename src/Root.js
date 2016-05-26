@@ -1,20 +1,19 @@
 import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute } from 'react-router';
+import { Router } from 'react-router';
+import routes from './routes';
 import App from './containers/App';
-import HomePage from './containers/HomePage';
-import PageOne from './containers/PageOne';
 import DevTools from './DevTools';
+
+const rootRoute = {
+  component: App,
+  childRoutes: routes,
+};
 
 const Root = ({ store, history }) => (
   <Provider store={store}>
     <div>
-      <Router history={history} >
-        <Route path="/" component={App}>
-          <IndexRoute component={HomePage} />
-          <Route path="page" component={PageOne} />
-        </Route>
-      </Router>
+      <Router history={history} routes={rootRoute} />
       <DevTools />
     </div>
   </Provider>

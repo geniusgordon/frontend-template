@@ -1,7 +1,6 @@
 .app-title {
   font-size: 50px;
   color: red;
-  transition: color 0.5 ease;
 }
 
 a {
@@ -10,7 +9,9 @@ a {
   margin: 10px;
   border: 1px solid black;
   border-radius: 5px;
+  color: black;
   text-decoration: none;
+  transition: all 0.3s ease;
 
   &.active {
     background-color: black;
