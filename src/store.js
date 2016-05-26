@@ -1,11 +1,15 @@
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import { routerMiddleware } from 'react-router-redux';
 import reducer from './reducers';
 import DevTools from './DevTools';
 
-export default function configureStore() {
+export default function configureStore(history) {
   const store = createStore(
     reducer,
-    compose(DevTools.instrument())
+    compose(
+      applyMiddleware(routerMiddleware(history)),
+      DevTools.instrument()
+    )
   );
 
   if (module.hot) {
