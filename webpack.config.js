@@ -6,8 +6,8 @@ const config = {
     'index': './src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, 'public'),
-    publicPath: '/public/',
+    path: path.resolve(__dirname, 'static'),
+    publicPath: '/static/',
     filename: 'bundle.js',
   },
   resolve: {

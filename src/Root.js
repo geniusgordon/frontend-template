@@ -10,11 +10,18 @@ const rootRoute = {
   childRoutes: routes,
 };
 
+const renderDevTools = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return null;
+  }
+  return <DevTools />;
+};
+
 const Root = ({ store, history }) => (
   <Provider store={store}>
     <div>
       <Router history={history} routes={rootRoute} />
-      <DevTools />
+      {renderDevTools()}
     </div>
   </Provider>
 );
