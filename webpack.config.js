@@ -27,19 +27,22 @@ const config = {
   postcss: function() {
     return [require('autoprefixer'), require('precss')];
   },
-}
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
+  ],
+};
 
 if (process.env.NODE_ENV === 'production') {
-  config.plugins = [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
+  config.plugins = config.plugins.concat([
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
       },
     }),
-  ];
+  ]);
 }
 
 module.exports = config;
