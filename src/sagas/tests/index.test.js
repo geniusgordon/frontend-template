@@ -1,7 +1,6 @@
 /* eslint-env mocha */
 import { expect } from 'chai';
-import { delay } from 'redux-saga';
-import { put, call } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 import { counter } from '../index';
 import { increment } from '../../containers/App/actions';
 

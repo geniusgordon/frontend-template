@@ -15,7 +15,7 @@ describe('<App />', () => {
   it('should render it\'s children', () => {
     const children = <div>Test</div>;
     const wrapper = shallow(<App>{children}</App>);
-    expect(wrapper.contains(children)).to.be.true;
+    expect(wrapper.contains(children)).to.equal(true);
   });
 });
 

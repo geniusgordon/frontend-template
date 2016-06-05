@@ -1,7 +1,7 @@
+/* eslint-env mocha */
 import { expect } from 'chai';
 import appReducer from '../reducer';
 import { message, increment } from '../actions';
-import { fromJS } from 'immutable';
 
 describe('App reducer', () => {
   it('should state message of state', () => {

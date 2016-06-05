@@ -1,5 +1,4 @@
 import path from 'path';
-import { createServer } from 'http';
 import express from 'express';
 import logger from 'morgan';
 
@@ -14,6 +13,6 @@ app.use('*', (req, res) => {
   });
 });
 app.listen(port, () => {
-  console.log(`listening on port: ${port}`);
+  console.log(`listening on port: ${port}`); // eslint-disable-line no-console
 });
 
