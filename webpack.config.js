@@ -2,9 +2,9 @@ var path = require('path');
 var webpack = require('webpack');
 
 const config = {
-  entry: {
-    'index': './src/index.js',
-  },
+  entry: [
+    './src/index.js',
+  ],
   output: {
     path: path.resolve(__dirname, 'static'),
     publicPath: '/static/',
@@ -43,6 +43,15 @@ if (process.env.NODE_ENV === 'production') {
       },
     }),
   ]);
+} else {
+  config.entry = config.entry.concat([
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+  ]),
+  config.plugins = config.plugins.concat([
+    new webpack.HotModuleReplacementPlugin()
+  ]);
 }
 
 module.exports = config;
+

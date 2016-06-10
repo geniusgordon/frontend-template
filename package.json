@@ -3,13 +3,11 @@
   "version": "0.0.0",
   "description": "frontend-template",
   "scripts": {
-    "build": "npm run build:client && npm run build:server",
     "build:client": "webpack",
-    "build:server": "mkdir -p dist && babel src/server.js -o dist/server.js",
     "lint": "eslint ./src",
-    "dev": "webpack-dev-server --inline --hot",
-    "prestart": "npm run build",
-    "start": "node dist/server.js",
+    "dev": "node devServer.js",
+    "prestart": "npm run build:client",
+    "start": "NODE_ENV=production node server.js",
     "test": "NODE_ENV=test mocha ./src/**/*.test.js",
     "posttest": "npm run lint"
   },
