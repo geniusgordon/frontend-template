@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';                                          
+import fetch from 'isomorphic-fetch';
 
 const BASE_URL = window.API_URL;
 
