@@ -1,6 +1,6 @@
 import { push } from 'react-router-redux';
 
-import * as app from './containers/App/actions';
+import * as app from '../containers/App/actions';
 export { app };
 
 export const routing = {

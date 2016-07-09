@@ -8,12 +8,12 @@ function loadModule(callback) {
 const routes = [{
   path: '/',
   getComponent(nextState, callback) {
-    require(['./containers/HomePage'], loadModule(callback));
+    require(['../containers/HomePage'], loadModule(callback));
   },
 }, {
   path: '/page',
   getComponent(nextState, callback) {
-    require(['./containers/PageOne'], loadModule(callback));
+    require(['../containers/PageOne'], loadModule(callback));
   },
 }];
 

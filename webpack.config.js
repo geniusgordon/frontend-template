@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 
+const port = process.env.PORT || 3000;
+
 const config = {
   entry: [
     './src/index.js',
@@ -30,6 +32,7 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'window.API_URL': JSON.stringify(process.env.API_URL),
     }),
   ],
 };
@@ -45,7 +48,7 @@ if (process.env.NODE_ENV === 'production') {
   ]);
 } else {
   config.entry = config.entry.concat([
-    'webpack-dev-server/client?http://localhost:3000',
+    `webpack-dev-server/client?http://localhost:${port}`,
     'webpack/hot/only-dev-server',
   ]),
   config.plugins = config.plugins.concat([

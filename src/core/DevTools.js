@@ -8,8 +8,8 @@ import * as actionCreators from './actions';
 
 const DevTools = createDevTools(
   <DockMonitor
-    toggleVisibilityKey="h"
-    changePositionKey="q"
+    toggleVisibilityKey="ctrl-h"
+    changePositionKey="ctrl-q"
     defaultIsVisible={false}
   >
     <MultipleMonitors>
