@@ -6,7 +6,7 @@
     "build:client": "webpack",
     "lint": "eslint ./src",
     "dev": "node devServer.js",
-    "prestart": "npm run build:client",
+    "prestart": "NODE_ENV=production npm run build:client",
     "start": "NODE_ENV=production node server.js",
     "test": "NODE_ENV=test mocha ./src/**/*.test.js",
     "posttest": "npm run lint"
