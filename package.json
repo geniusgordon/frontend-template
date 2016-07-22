@@ -4,12 +4,13 @@
   "description": "frontend-template",
   "scripts": {
     "build:client": "webpack",
-    "lint": "eslint ./src",
+    "lint:js": "eslint ./src",
+    "lint:css": "stylelint ./src/**/*.css",
     "dev": "node devServer.js",
     "prestart": "NODE_ENV=production npm run build:client",
     "start": "NODE_ENV=production node server.js",
     "test": "NODE_ENV=test mocha ./src/**/*.test.js",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint:js && npm run lint:css"
   },
   "dependencies": {
     "babel-polyfill": "^6.9.0",
@@ -56,7 +57,27 @@
     "redux-devtools-log-monitor": "^1.0.11",
     "redux-devtools-multiple-monitors": "^1.0.1",
     "style-loader": "^0.13.1",
+    "stylelint": "^7.0.3",
+    "stylelint-config-standard": "^11.0.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react",
+      "react-optimize"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   }
 }
