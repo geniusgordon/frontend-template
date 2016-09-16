@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 const BASE_URL = window.API_URL;
 
 function get(path) {
-  return fetch(`${BASE_URL}${path}`).then((res) => res.json());
+  return fetch(`${BASE_URL}${path}`).then(res => res.json());
 }
 
 function post(path, data) {
@@ -14,7 +14,7 @@ function post(path, data) {
     },
     body: JSON.stringify(data),
   })
-  .then((res) => res.json());
+  .then(res => res.json());
 }
 
 export default { get, post };

@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 
+const host = process.env.HOST || 'localhost';
 const port = process.env.PORT || 3000;
 
 const config = {
@@ -48,7 +49,7 @@ if (process.env.NODE_ENV === 'production') {
   ]);
 } else {
   config.entry = config.entry.concat([
-    `webpack-dev-server/client?http://localhost:${port}`,
+    `webpack-dev-server/client?http://${host}:${port}`,
     'webpack/hot/only-dev-server',
   ]),
   config.plugins = config.plugins.concat([

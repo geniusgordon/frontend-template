@@ -18,10 +18,9 @@ App.propTypes = {
   children: PropTypes.node,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   message: `${state.app.get('message')}, ${state.app.get('count')}`,
 });
 
-export { App };
 export default connect(mapStateToProps)(App);
 

@@ -5,17 +5,22 @@ function loadModule(callback) {
   };
 }
 
-const routes = [{
-  path: '/',
+const routes = {
   getComponent(nextState, callback) {
-    require(['../containers/HomePage'], loadModule(callback));
+    require(['../containers/App'], loadModule(callback));
   },
-}, {
-  path: '/page',
-  getComponent(nextState, callback) {
-    require(['../containers/PageOne'], loadModule(callback));
-  },
-}];
+  childRoutes: [{
+    path: '/',
+    getComponent(nextState, callback) {
+      require(['../containers/HomePage'], loadModule(callback));
+    },
+  }, {
+    path: '/page',
+    getComponent(nextState, callback) {
+      require(['../containers/PageOne'], loadModule(callback));
+    },
+  }],
+};
 
 export default routes;
 

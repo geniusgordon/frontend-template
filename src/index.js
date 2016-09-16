@@ -17,6 +17,7 @@ render(
 if (module.hot) {
   module.hot.accept('./core/Root', () => {
     const NextRoot = require('./core/Root').default; // eslint-disable-line global-require
+
     render(
       <NextRoot store={store} history={history} />,
       document.getElementById('root')
