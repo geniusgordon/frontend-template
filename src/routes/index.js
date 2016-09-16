@@ -6,15 +6,16 @@ function loadModule(callback) {
 }
 
 const routes = {
+  path: '/',
   getComponent(nextState, callback) {
     require(['../containers/App'], loadModule(callback));
   },
-  childRoutes: [{
-    path: '/',
+  indexRoute: {
     getComponent(nextState, callback) {
       require(['../containers/HomePage'], loadModule(callback));
     },
-  }, {
+  },
+  childRoutes: [{
     path: '/page',
     getComponent(nextState, callback) {
       require(['../containers/PageOne'], loadModule(callback));
