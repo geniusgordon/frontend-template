@@ -9,10 +9,11 @@
     "lint:css": "stylelint src/**/*.css",
     "dev": "node devServer.js",
     "start": "node server.js",
-    "test": "NODE_ENV=test mocha src/**/*.test.js",
+    "test": "ava src/**/*.test.js",
     "posttest": "npm run lint"
   },
   "dependencies": {
+    "ava": "^0.16.0",
     "babel-polyfill": "^6.13.0",
     "express": "^4.14.0",
     "isomorphic-fetch": "^2.2.1",
@@ -35,6 +36,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.18.0",
     "css-loader": "^0.25.0",
     "css-modules-require-hook": "^4.0.2",
     "enzyme": "^2.4.1",
@@ -58,6 +60,10 @@
     "stylelint-config-standard": "^14.0.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.2"
+  },
+  "ava": {
+    "require": "babel-register",
+    "babel": "inherit"
   },
   "babel": {
     "presets": [
