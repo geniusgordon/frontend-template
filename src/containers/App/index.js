@@ -19,7 +19,7 @@ App.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  message: `${state.app.get('message')}, ${state.app.get('count')}`,
+  message: `${state.app.message}, ${state.app.count}`,
 });
 
 export default connect(mapStateToProps)(App);

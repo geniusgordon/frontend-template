@@ -1,4 +1,4 @@
-/* eslint-disable global-require */
+/* eslint-disable global-require, import/no-dynamic-require */
 function loadModule(callback) {
   return (componentModule) => {
     callback(null, componentModule.default);
