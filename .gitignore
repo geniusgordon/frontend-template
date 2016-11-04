@@ -42,4 +42,5 @@ jspm_packages
 
 static/
 dist/
+yarn.lock
 

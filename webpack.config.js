@@ -53,7 +53,7 @@ if (process.env.NODE_ENV === 'production') {
     'webpack/hot/only-dev-server',
   ]),
   config.plugins = config.plugins.concat([
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ]);
 }
 
