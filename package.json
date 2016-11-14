@@ -4,16 +4,15 @@
   "description": "frontend-template",
   "scripts": {
     "build": "webpack",
-    "lint": "npm run lint:js && npm run lint:css",
+    "lint": "yarn run lint:js && yarn run lint:css",
     "lint:js": "eslint src",
     "lint:css": "stylelint src/**/*.css",
     "dev": "node devServer.js",
     "start": "node server.js",
-    "test": "ava src/**/*.test.js",
-    "posttest": "npm run lint"
+    "test": "jest",
+    "posttest": "yarn run lint"
   },
   "dependencies": {
-    "ava": "^0.16.0",
     "babel-polyfill": "^6.13.0",
     "express": "^4.14.0",
     "isomorphic-fetch": "^2.2.1",
@@ -46,6 +45,7 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.2.2",
+    "jest": "^17.0.1",
     "postcss-loader": "^1.1.0",
     "precss": "^1.4.0",
     "react-addons-test-utils": "^15.3.1",
@@ -80,7 +80,8 @@
     "parser": "babel-eslint",
     "extends": "airbnb",
     "env": {
-      "browser": true
+      "browser": true,
+      "jest": true
     },
     "rules": {
       "react/jsx-filename-extension": [
