@@ -13,10 +13,10 @@ export default function configureStore(history) {
     compose(
       applyMiddleware(
         routerMiddleware(history),
-        sagaMiddleware
+        sagaMiddleware,
       ),
-      DevTools.instrument()
-    )
+      DevTools.instrument(),
+    ),
   );
 
   sagaMiddleware.run(rootSaga);

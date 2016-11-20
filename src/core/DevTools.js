@@ -6,7 +6,7 @@ import DockMonitor from 'redux-devtools-dock-monitor';
 import MultipleMonitors from 'redux-devtools-multiple-monitors';
 import * as actionCreators from './actions';
 
-const DevTools = createDevTools(
+const dockMonitor = (
   <DockMonitor
     toggleVisibilityKey="ctrl-h"
     changePositionKey="ctrl-q"
@@ -18,6 +18,7 @@ const DevTools = createDevTools(
     </MultipleMonitors>
   </DockMonitor>
 );
+const DevTools = createDevTools(dockMonitor);
 
 export default DevTools;
 

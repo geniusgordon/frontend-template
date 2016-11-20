@@ -11,7 +11,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 render(
   <Root store={store} history={history} />,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 if (module.hot) {
@@ -20,7 +20,7 @@ if (module.hot) {
 
     render(
       <NextRoot store={store} history={history} />,
-      document.getElementById('root')
+      document.getElementById('root'),
     );
   });
 }
